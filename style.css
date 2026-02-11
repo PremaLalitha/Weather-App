@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    color: #2d3436;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+    letter-spacing: 2px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1rem;
+    border: 2px solid #dfe6e9;
+    border-radius: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    background: white;
+    color: #2d3436;
+}
+
+input[type="text"]:focus {
+    border-color: #0984e3;
+    box-shadow: 0 0 0 4px rgba(9, 132, 227, 0.1);
+}
+
+input[type="text"]::placeholder {
+    color: #b2bec3;
+    font-weight: 300;
+}
+
+button {
+    background: linear-gradient(135deg, #0984e3, #74b9ff);
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
+    width: 100%;
+    max-width: 250px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(9, 132, 227, 0.4);
+    background: linear-gradient(135deg, #074b8c, #0984e3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#result {
+    margin-top: 35px;
+    padding: 25px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+    min-height: 200px;
+    color: #2d3436;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: left;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-bottom: 5px solid #0984e3;
+}
+
+/* Weather card styling */
+#result h3 {
+    color: #0984e3;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    border-bottom: 2px solid #74b9ff;
+    padding-bottom: 12px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+#result p {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+/* Weather icons styling */
+#result p:nth-child(2) {
+    border-left: 6px solid #ff7675;
+}
+
+#result p:nth-child(3) {
+    border-left: 6px solid #74b9ff;
+}
+
+#result p:nth-child(4) {
+    border-left: 6px solid #55efc4;
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+#result:empty::before {
+    content: "Enter a city to see weather...";
+    color: #636e72;
+    font-size: 1.1rem;
+    text-align: center;
+    display: block;
+    padding: 20px;
+}
+
+/* Error message styling */
+.error-message {
+    background: #ffeaa7;
+    color: #d63031;
+    padding: 20px;
+    border-radius: 15px;
+    font-weight: 600;
+    border-left: 6px solid #d63031;
+    text-align: center;
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    input[type="text"] {
+        padding: 14px 18px;
+    }
+    
+    button {
+        padding: 14px 30px;
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    
+    #result h3 {
+        font-size: 1.5rem;
+    }
+    
+    #result p {
+        padding: 10px 12px;
+        font-size: 1rem;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #0652DD, #1e272e);
+    }
+    
+    .container {
+        background: rgba(30, 39, 46, 0.95);
+    }
+    
+    h1 {
+        color: #f5f6fa;
+    }
+    
+    #result {
+        background: linear-gradient(145deg, #2f3640, #353b48);
+        color: #f5f6fa;
+    }
+    
+    #result p {
+        background: #2c3e50;
+        color: #ecf0f1;
+    }
+    
+    input[type="text"] {
+        background: #2f3640;
+        border-color: #4a4e69;
+        color: #f5f6fa;
+    }
+    
+    input[type="text"]::placeholder {
+        color: #b2bec3;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0984e3;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #074b8c;
+}
