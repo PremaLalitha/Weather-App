@@ -16,7 +16,7 @@ This project is also used to demonstrate a complete DevOps pipeline using GitHub
 
 ### DevOps Tools
 - Git & GitHub (Version Control)
-- Jenkins - Freestyle (CI/CD Pipeline)
+- Jenkins - Freestyle Project (CI/CD Pipeline)
 - Docker (Containerization)
 
 ## Features
