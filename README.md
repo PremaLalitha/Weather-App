@@ -16,9 +16,8 @@ This project is also used to demonstrate a complete DevOps pipeline using GitHub
 
 ### DevOps Tools
 - Git & GitHub (Version Control)
-- Jenkins (CI/CD Pipeline)
+- Jenkins - Freestyle (CI/CD Pipeline)
 - Docker (Containerization)
-- Nginx (Web Server inside Docker)
 
 ## Features
 ✔ Search weather for any city  
