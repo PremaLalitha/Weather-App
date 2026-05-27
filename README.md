@@ -20,13 +20,15 @@ This project is also used to demonstrate a complete DevOps pipeline using GitHub
 - Docker (Containerization)
 
 ## Features
-✔ Search weather for any city  
-✔ Shows temperature  
-✔ Shows wind speed  
-✔ Shows humidity  
-✔ Responsive UI  
-✔ No API Key version available  
+ Search weather for any city  
+ Shows temperature  
+ Shows wind speed  
+ Shows humidity  
+ Responsive UI  
+ No API Key version available  
 
 ## Flow
 GitHub → Jenkins → Docker Build → Container Run → Deploy App
 
+## Live Demo
+https://premalalitha.github.io/Weather-App/
